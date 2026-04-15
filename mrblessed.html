@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr. Blessed Tint & Wrap — Princeton, TX</title>
+<meta name="description" content="Premium window tinting and wrap services in Princeton, TX. Mr. Blessed Tint & Wrap — precision installs, quality film, open 24 hours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#080808;--dark:#111;--dark2:#1a1a1a;
+  --gold:#c9a84c;--gold-light:#e2c06e;--gold-dim:rgba(201,168,76,0.12);
+  --white:#f5f0e8;--gray:#888;--gray-lt:#bbb;
+  --ff-display:'Bebas Neue',sans-serif;
+  --ff-cond:'Barlow Condensed',sans-serif;
+  --ff-body:'Barlow',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--ff-body);font-weight:300;overflow-x:hidden}
+
+/* PAGE SYSTEM */
+.page{display:none;min-height:100vh}
+.page.active{display:block;animation:fadeUp 0.45s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:70px;background:rgba(8,8,8,0.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,0.12)}
+.nav-logo{font-family:var(--ff-display);font-size:1.45rem;letter-spacing:0.08em;color:var(--white);text-decoration:none;cursor:pointer}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:2.4rem;list-style:none}
+.nav-links a{font-family:var(--ff-cond);font-size:0.82rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--gray-lt);text-decoration:none;cursor:pointer;transition:color 0.2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{font-family:var(--ff-cond);font-size:0.78rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--black);background:var(--gold);border:none;padding:0.6rem 1.4rem;cursor:pointer;text-decoration:none;transition:background 0.2s,transform 0.2s}
+.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
+.mob-btn{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
+.mob-btn span{display:block;width:24px;height:2px;background:var(--white);transition:all 0.3s}
+.mob-nav{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(8,8,8,0.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,0.14);flex-direction:column;padding:1.5rem 2rem;z-index:99}
+.mob-nav.open{display:flex}
+.mob-nav a{font-family:var(--ff-cond);font-size:1rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-lt);text-decoration:none;cursor:pointer;padding:0.9rem 0;border-bottom:1px solid rgba(255,255,255,0.06);transition:color 0.2s}
+.mob-nav a:last-child{border-bottom:none}
+.mob-nav a:hover{color:var(--gold)}
+@media(max-width:768px){nav{padding:0 1.5rem}.nav-links,.nav-cta{display:none}.mob-btn{display:flex}}
+
+/* BUTTONS */
+.btn-gold{font-family:var(--ff-cond);font-size:0.83rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;background:var(--gold);color:var(--black);border:none;padding:0.85rem 2.1rem;cursor:pointer;text-decoration:none;display:inline-block;transition:background 0.2s,transform 0.2s}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-outline{font-family:var(--ff-cond);font-size:0.83rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.28);padding:0.85rem 2.1rem;cursor:pointer;text-decoration:none;display:inline-block;transition:border-color 0.2s,color 0.2s}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+/* SECTION TAGS */
+.stag{font-family:var(--ff-cond);font-size:0.75rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.8rem;margin-bottom:1rem}
+.stag::before{content:'';width:28px;height:1px;background:var(--gold);display:block;flex-shrink:0}
+.stag.center{justify-content:center}
+
+/* ═══ HOME ═══ */
+.hero{position:relative;height:100vh;display:flex;align-items:flex-end;padding-bottom:7rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:url('pexels-svjae-27985078.jpg');background-size:cover;background-position:center 30%;filter:brightness(0.38);transform:scale(1.06);animation:hZoom 14s ease-out both}
+@keyframes hZoom{from{transform:scale(1.12)}to{transform:scale(1.03)}}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,8,0.97) 0%,rgba(8,8,8,0.25) 55%,transparent 100%)}
+.hero-content{position:relative;z-index:2;padding:0 4rem;max-width:860px;animation:fadeUp 0.9s 0.15s ease both}
+.hero-eye{font-family:var(--ff-cond);font-size:0.78rem;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem;display:flex;align-items:center;gap:1rem}
+.hero-eye::before{content:'';width:38px;height:1px;background:var(--gold);display:block}
+.hero-title{font-family:var(--ff-display);font-size:clamp(4rem,11vw,9.5rem);line-height:0.91;letter-spacing:0.02em;color:var(--white);margin-bottom:1.6rem}
+.hero-title span{color:var(--gold)}
+.hero-sub{font-size:1.05rem;font-weight:300;color:var(--gray-lt);max-width:460px;line-height:1.75;margin-bottom:2.4rem}
+.hero-actions{display:flex;gap:1.1rem;flex-wrap:wrap}
+.hero-scroll{position:absolute;bottom:2.5rem;right:4rem;z-index:2;display:flex;flex-direction:column;align-items:center;gap:0.5rem;opacity:0.45}
+.hero-scroll span{font-family:var(--ff-cond);font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gray);writing-mode:vertical-rl}
+.scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sLine 2s ease-in-out infinite}
+@keyframes sLine{0%,100%{opacity:0.3}50%{opacity:1}}
+
+/* Stats */
+.stats{background:var(--dark2);border-top:1px solid rgba(201,168,76,0.18);border-bottom:1px solid rgba(201,168,76,0.18);display:flex;justify-content:center}
+.stat{flex:1;max-width:210px;text-align:center;padding:1.8rem 1rem;border-right:1px solid rgba(255,255,255,0.05)}
+.stat:last-child{border-right:none}
+.stat-n{font-family:var(--ff-display);font-size:2.8rem;color:var(--gold);letter-spacing:0.05em;line-height:1}
+.stat-l{font-family:var(--ff-cond);font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gray);margin-top:0.3rem}
+
+/* Feature */
+.feature{display:grid;grid-template-columns:1fr 1fr;max-width:1400px;margin:5rem auto;padding:0 4rem}
+.feat-img{overflow:hidden;aspect-ratio:4/3}
+.feat-img img{width:100%;height:100%;object-fit:cover;filter:brightness(0.72);transition:transform 0.7s ease}
+.feat-img:hover img{transform:scale(1.04)}
+.feat-txt{background:var(--dark2);padding:4rem;display:flex;flex-direction:column;justify-content:center}
+.feat-h{font-family:var(--ff-display);font-size:clamp(2.2rem,4vw,3.8rem);line-height:1;letter-spacing:0.03em;color:var(--white);margin-bottom:1.4rem}
+.feat-p{font-size:0.97rem;line-height:1.85;color:var(--gray-lt);margin-bottom:2rem}
+
+/* Services grid home */
+.srv-preview{padding:0 4rem 6rem;max-width:1400px;margin:0 auto}
+.sh{text-align:center;margin-bottom:3.5rem}
+.sec-title{font-family:var(--ff-display);font-size:clamp(3rem,6vw,5.5rem);letter-spacing:0.05em;color:var(--white);line-height:1}
+.sec-title span{color:var(--gold)}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,168,76,0.09)}
+.scard{background:var(--dark);padding:2.8rem 2.2rem;position:relative;overflow:hidden;transition:background 0.3s;cursor:pointer}
+.scard::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height 0.4s ease}
+.scard:hover{background:var(--dark2)}
+.scard:hover::before{height:100%}
+.scard-n{font-family:var(--ff-display);font-size:4rem;color:rgba(201,168,76,0.08);position:absolute;top:1.2rem;right:1.8rem;line-height:1;transition:color 0.3s}
+.scard:hover .scard-n{color:rgba(201,168,76,0.18)}
+.scard-ico{width:42px;height:42px;margin-bottom:1.4rem;opacity:0.65}
+.scard-name{font-family:var(--ff-cond);font-size:1.25rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--white);margin-bottom:0.7rem}
+.scard-desc{font-size:0.88rem;line-height:1.75;color:var(--gray)}
+
+/* CTA Banner */
+.cta-ban{position:relative;padding:7rem 4rem;text-align:center;overflow:hidden}
+.cta-bg{position:absolute;inset:0;background-image:url('pexels-bulat843-1243575272-29809127.jpg');background-size:cover;background-position:center;filter:brightness(0.22)}
+.cta-ov{position:absolute;inset:0;background:rgba(8,8,8,0.55)}
+.cta-con{position:relative;z-index:2}
+.cta-h{font-family:var(--ff-display);font-size:clamp(2.4rem,5.5vw,5rem);letter-spacing:0.05em;color:var(--white);margin-bottom:0.9rem}
+.cta-s{font-size:0.97rem;color:var(--gray-lt);margin-bottom:2.3rem;font-weight:300}
+.cta-acts{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--dark);border-top:1px solid rgba(201,168,76,0.14);padding:2.8rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.4rem}
+.f-logo{font-family:var(--ff-display);font-size:1.25rem;letter-spacing:0.08em;color:var(--white);cursor:pointer;text-decoration:none}
+.f-logo span{color:var(--gold)}
+.f-copy{font-size:0.78rem;color:var(--gray);font-family:var(--ff-cond);letter-spacing:0.06em}
+.f-soc{display:flex;gap:0.8rem}
+.f-soc a{width:36px;height:36px;border:1px solid rgba(255,255,255,0.11);display:flex;align-items:center;justify-content:center;transition:border-color 0.2s,background 0.2s;text-decoration:none}
+.f-soc a:hover{border-color:var(--gold);background:var(--gold-dim)}
+.f-soc svg{width:15px;height:15px;stroke:var(--gray-lt);fill:none;stroke-width:1.5}
+.f-soc a:hover svg{stroke:var(--gold)}
+
+/* ═══ PAGE HERO ═══ */
+.ph{position:relative;height:48vh;display:flex;align-items:flex-end;padding:4rem;overflow:hidden}
+.ph-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,8,1) 0%,transparent 65%)}
+.ph-con{position:relative;z-index:2}
+.p-eye{font-family:var(--ff-cond);font-size:0.74rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem;display:flex;align-items:center;gap:0.8rem}
+.p-eye::before{content:'';width:28px;height:1px;background:var(--gold);display:block}
+.p-title{font-family:var(--ff-display);font-size:clamp(3.5rem,8vw,7rem);letter-spacing:0.03em;line-height:1;color:var(--white)}
+
+/* ABOUT */
+.about-bg{position:absolute;inset:0;background-image:url('IMG_6308.jpg');background-size:cover;background-position:center;filter:brightness(0.32)}
+.about-body{max-width:1200px;margin:0 auto;padding:5rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.ab-h{font-family:var(--ff-display);font-size:2.4rem;letter-spacing:0.04em;color:var(--white);margin-bottom:1.4rem}
+.ab-p{font-size:0.97rem;line-height:1.9;color:var(--gray-lt);margin-bottom:1.3rem}
+.ab-p strong{color:var(--gold);font-weight:500}
+.ab-img{position:relative}
+.ab-img img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:brightness(0.82)}
+.ab-acc{position:absolute;bottom:-18px;right:-18px;width:58%;aspect-ratio:1;border:2px solid var(--gold);z-index:-1}
+.av-wrap{background:var(--dark2);border-top:1px solid rgba(201,168,76,0.13);padding:5rem 4rem}
+.av-inner{max-width:1200px;margin:0 auto}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;margin-top:3rem}
+.vi-line{width:38px;height:2px;background:var(--gold);margin-bottom:1.1rem}
+.vi-name{font-family:var(--ff-cond);font-size:1.1rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);margin-bottom:0.65rem}
+.vi-desc{font-size:0.88rem;line-height:1.82;color:var(--gray)}
+.ig-sec{padding:5rem 4rem;max-width:1200px;margin:0 auto;text-align:center}
+.ig-btn{display:inline-flex;align-items:center;gap:0.75rem;margin-top:2rem;font-family:var(--ff-cond);font-size:0.88rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:0.95rem 2.4rem;text-decoration:none;transition:background 0.2s,transform 0.2s}
+.ig-btn:hover{background:var(--gold-light);transform:translateY(-2px)}
+.ig-btn svg{width:17px;height:17px}
+.ig-note{font-size:0.85rem;color:var(--gray);margin-top:1rem;font-style:italic}
+
+/* SERVICES PAGE */
+.srv-bg{position:absolute;inset:0;background-image:url('pexels-tejas-jr-528833302-36021355.jpg');background-size:cover;background-position:center 40%;filter:brightness(0.28)}
+.srv-full{max-width:1200px;margin:0 auto;padding:5rem 4rem}
+.sfi{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:4px;border:1px solid rgba(201,168,76,0.08);overflow:hidden;transition:border-color 0.3s}
+.sfi:hover{border-color:rgba(201,168,76,0.26)}
+.sfi:nth-child(even){direction:rtl}
+.sfi:nth-child(even)>*{direction:ltr}
+.sfi-img{aspect-ratio:16/10;overflow:hidden}
+.sfi-img img{width:100%;height:100%;object-fit:cover;filter:brightness(0.65);transition:transform 0.6s ease,filter 0.3s}
+.sfi:hover .sfi-img img{transform:scale(1.04);filter:brightness(0.82)}
+.sfi-info{padding:3.2rem;display:flex;flex-direction:column;justify-content:center;background:var(--dark)}
+.sfi-num{font-family:var(--ff-display);font-size:5rem;color:rgba(201,168,76,0.07);line-height:1;margin-bottom:0.4rem}
+.sfi-name{font-family:var(--ff-display);font-size:2rem;letter-spacing:0.04em;color:var(--white);margin-bottom:0.9rem}
+.sfi-desc{font-size:0.92rem;line-height:1.82;color:var(--gray);margin-bottom:1.4rem}
+.stags{display:flex;flex-wrap:wrap;gap:0.45rem}
+.stg{font-family:var(--ff-cond);font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,0.28);padding:0.28rem 0.75rem}
+
+/* GALLERY */
+.gal-bg{position:absolute;inset:0;background-image:url('pexels-introspectivedsgn-27258912.jpg');background-size:cover;background-position:center;filter:brightness(0.28)}
+.gal-grid{padding:4rem;max-width:1400px;margin:0 auto;columns:3;column-gap:4px}
+.gal-item{break-inside:avoid;margin-bottom:4px;overflow:hidden;position:relative;cursor:pointer}
+.gal-item img{width:100%;display:block;filter:brightness(0.78);transition:transform 0.5s ease,filter 0.3s}
+.gal-item:hover img{transform:scale(1.05);filter:brightness(1)}
+.gal-ov{position:absolute;inset:0;background:rgba(201,168,76,0);transition:background 0.3s}
+.gal-item:hover .gal-ov{background:rgba(201,168,76,0.06)}
+.lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,0.95);align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain}
+.lb-close{position:absolute;top:1.8rem;right:2rem;background:none;border:none;color:var(--white);font-size:1.8rem;cursor:pointer;font-family:var(--ff-cond);opacity:0.65;transition:opacity 0.2s;line-height:1}
+.lb-close:hover{opacity:1}
+
+/* CONTACT */
+.con-bg{position:absolute;inset:0;background-image:url('IMG_6311.jpg');background-size:cover;background-position:center;filter:brightness(0.28)}
+.con-body{max-width:1200px;margin:0 auto;padding:5rem 4rem;display:grid;grid-template-columns:1fr 1.3fr;gap:5.5rem;align-items:start}
+.ci-h{font-family:var(--ff-display);font-size:2.1rem;letter-spacing:0.04em;color:var(--white);margin-bottom:2.4rem}
+.cd{display:flex;gap:1.1rem;margin-bottom:1.9rem;align-items:flex-start}
+.cd-ico{width:38px;height:38px;border:1px solid rgba(201,168,76,0.28);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cd-ico svg{width:17px;height:17px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.cd-lbl{font-family:var(--ff-cond);font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.28rem}
+.cd-val{font-size:0.92rem;color:var(--gray-lt);line-height:1.55}
+.cd-val a{color:var(--gray-lt);text-decoration:none;transition:color 0.2s}
+.cd-val a:hover{color:var(--gold)}
+.map-wrap{margin-top:2.2rem;border:1px solid rgba(201,168,76,0.14);overflow:hidden;filter:grayscale(75%) brightness(0.65);transition:filter 0.3s}
+.map-wrap:hover{filter:grayscale(25%) brightness(0.88)}
+.map-wrap iframe{width:100%;height:210px;border:none;display:block}
+.cf-h{font-family:var(--ff-display);font-size:2.1rem;letter-spacing:0.04em;color:var(--white);margin-bottom:2.4rem}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;margin-bottom:0.9rem}
+.fg{margin-bottom:0.9rem}
+.fg label{display:block;font-family:var(--ff-cond);font-size:0.68rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.45rem}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--dark2);border:1px solid rgba(255,255,255,0.07);color:var(--white);font-family:var(--ff-body);font-size:0.93rem;font-weight:300;padding:0.85rem 1rem;outline:none;transition:border-color 0.2s;-webkit-appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,0.18)}
+.fg select option{background:var(--dark2)}
+.fg textarea{resize:vertical;min-height:125px}
+.fsub{font-family:var(--ff-cond);font-size:0.83rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background:var(--gold);color:var(--black);border:none;padding:0.95rem 2.7rem;cursor:pointer;transition:background 0.2s,transform 0.2s;margin-top:0.4rem}
+.fsub:hover{background:var(--gold-light);transform:translateY(-2px)}
+.f-ok{display:none;background:rgba(201,168,76,0.09);border:1px solid rgba(201,168,76,0.28);padding:1.1rem 1.4rem;margin-top:0.9rem;font-family:var(--ff-cond);font-size:0.88rem;letter-spacing:0.05em;color:var(--gold)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .feature,.about-body,.con-body{grid-template-columns:1fr;gap:2.8rem}
+  .sgrid,.vgrid{grid-template-columns:1fr}
+  .sfi{grid-template-columns:1fr;direction:ltr!important}
+  .sfi:nth-child(even){direction:ltr}
+  .gal-grid{columns:2}
+  .frow{grid-template-columns:1fr}
+  .hero-content,.feat-txt,.srv-preview,.ab-wrap,.av-wrap,.ig-sec,.gal-grid,.srv-full,.con-body{padding-left:1.5rem;padding-right:1.5rem}
+  .ph,.hero-content{padding-left:1.5rem;padding-right:1.5rem}
+  footer{flex-direction:column;text-align:center;align-items:center;padding:2rem 1.5rem}
+  .stats{flex-wrap:wrap}
+  .stat{flex:1 1 50%;border-right:none;border-bottom:1px solid rgba(255,255,255,0.05)}
+  .ab-acc{display:none}
+  .feat-txt{padding:2.5rem 1.5rem}
+  .sfi-img{aspect-ratio:16/9}
+  .cta-ban{padding:5rem 1.5rem}
+}
+@media(max-width:500px){
+  .gal-grid{columns:1}
+  .hero-actions{flex-direction:column}
+  .hero-scroll{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a class="nav-logo" data-page="home">Mr.<span>Blessed</span></a>
+  <ul class="nav-links">
+    <li><a data-page="home" class="active">Home</a></li>
+    <li><a data-page="about">About</a></li>
+    <li><a data-page="services">Services</a></li>
+    <li><a data-page="gallery">Gallery</a></li>
+    <li><a data-page="contact">Contact</a></li>
+  </ul>
+  <a data-page="contact" class="nav-cta">Get a Quote</a>
+  <button class="mob-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-nav" id="mob-nav">
+  <a data-page="home">Home</a>
+  <a data-page="about">About</a>
+  <a data-page="services">Services</a>
+  <a data-page="gallery">Gallery</a>
+  <a data-page="contact">Contact</a>
+</div>
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-ov"></div>
+    <div class="hero-content">
+      <p class="hero-eye">Princeton, TX — Precision. Quality. Results.</p>
+      <h1 class="hero-title">Mr.<span>Blessed</span><br>Tint &amp; Wrap</h1>
+      <p class="hero-sub">Premium window tinting and wrapping services. Every install done with care, quality film, and a commitment to your satisfaction.</p>
+      <div class="hero-actions">
+        <a class="btn-gold" data-page="contact">Get a Free Quote</a>
+        <a class="btn-outline" data-page="services">Our Services</a>
+      </div>
+    </div>
+    <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
+  </section>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-n">500+</div><div class="stat-l">Cars Tinted</div></div>
+    <div class="stat"><div class="stat-n">5</div><div class="stat-l">Star Reviews</div></div>
+    <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Satisfaction</div></div>
+    <div class="stat"><div class="stat-n">24/7</div><div class="stat-l">Open Hours</div></div>
+  </div>
+
+  <div class="feature">
+    <div class="feat-img"><img src="pexels-tejas-jr-528833302-36021355.jpg" alt="Tint installation"></div>
+    <div class="feat-txt">
+      <p class="stag">About the Shop</p>
+      <h2 class="feat-h">Precision in Every Install</h2>
+      <p class="feat-p">Mr. Blessed Tint &amp; Wrap is Princeton's go-to shop for professional window tinting and vehicle wraps. We use top-tier film and materials to ensure heat rejection, UV protection, and a clean lasting finish on every vehicle.</p>
+      <a class="btn-gold" data-page="about">Our Story</a>
+    </div>
+  </div>
+
+  <div class="srv-preview">
+    <div class="sh">
+      <p class="stag center">What We Do</p>
+      <h2 class="sec-title">Our <span>Services</span></h2>
+    </div>
+    <div class="sgrid">
+      <div class="scard" data-page="services">
+        <div class="scard-n">01</div>
+        <svg class="scard-ico" viewBox="0 0 44 44" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="4" y="10" width="36" height="24" rx="2"/><path d="M4 16h36M14 10v4M30 10v4"/></svg>
+        <div class="scard-name">Automotive Tint</div>
+        <div class="scard-desc">Precision film installation on any car, truck, or SUV. Deep heat rejection and UV blocking on every window.</div>
+      </div>
+      <div class="scard" data-page="services">
+        <div class="scard-n">02</div>
+        <svg class="scard-ico" viewBox="0 0 44 44" fill="none" stroke="#c9a84c" stroke-width="1.5"><path d="M6 22 C8 10 20 6 22 6 C24 6 36 10 38 22"/><path d="M10 28 C12 36 18 38 22 38 C26 38 32 36 34 28"/><line x1="22" y1="6" x2="22" y2="38"/></svg>
+        <div class="scard-name">Vehicle Wraps</div>
+        <div class="scard-desc">Full or partial vinyl wraps for color changes, matte finishes, and custom designs. Protects your factory paint too.</div>
+      </div>
+      <div class="scard" data-page="services">
+        <div class="scard-n">03</div>
+        <svg class="scard-ico" viewBox="0 0 44 44" fill="none" stroke="#c9a84c" stroke-width="1.5"><rect x="6" y="6" width="32" height="32" rx="1"/><line x1="6" y1="16" x2="38" y2="16"/><line x1="6" y1="28" x2="38" y2="28"/><line x1="18" y1="6" x2="18" y2="38"/></svg>
+        <div class="scard-name">Home &amp; Commercial</div>
+        <div class="scard-desc">Window tinting for homes and businesses. Reduce heat, glare, and UV — improve privacy and lower energy costs.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-ban">
+    <div class="cta-bg"></div>
+    <div class="cta-ov"></div>
+    <div class="cta-con">
+      <h2 class="cta-h">Ready to Upgrade Your Ride?</h2>
+      <p class="cta-s">Call or text us — Open 24 hours, Princeton TX.</p>
+      <div class="cta-acts">
+        <a href="tel:4694523873" class="btn-gold">(469) 452-3873</a>
+        <a class="btn-outline" data-page="contact">Send a Message</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a class="f-logo" data-page="home">Mr.<span>Blessed</span> Tint &amp; Wrap</a>
+    <p class="f-copy">4900 W Princeton Dr, Princeton TX 75407 &mdash; Open 24 Hours &mdash; &copy; 2026</p>
+    <div class="f-soc">
+      <a href="https://www.instagram.com/mr.blessed_tint_wrap/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="#c9a84c" stroke="none"/></svg>
+      </a>
+    </div>
+  </footer>
+</div>
+
+<!-- ABOUT -->
+<div class="page" id="page-about">
+  <section class="ph">
+    <div class="about-bg"></div>
+    <div class="ph-ov"></div>
+    <div class="ph-con"><p class="p-eye">Our Story</p><h1 class="p-title">About Us</h1></div>
+  </section>
+
+  <div class="about-body">
+    <div>
+      <h2 class="ab-h">Built on Craft. Driven by Passion.</h2>
+      <p class="ab-p">Mr. Blessed Tint &amp; Wrap was founded on a simple belief — every vehicle deserves a professional, precision install. Based in Princeton, TX, we serve the greater DFW area with top-quality window tinting and custom wraps.</p>
+      <p class="ab-p">We take the time to do things right. That means <strong>proper prep, quality film</strong>, and attention to every edge and corner. No bubbles, no peeling, no shortcuts.</p>
+      <p class="ab-p">Whether you are here for a basic tint or a full vehicle transformation, you will get the same level of care every time. That is the Mr. Blessed standard.</p>
+      <p class="ab-p">We are open <strong>24 hours</strong> to fit around your schedule — not the other way around.</p>
+      <a class="btn-gold" style="margin-top:0.5rem" data-page="contact">Book an Appointment</a>
+    </div>
+    <div class="ab-img">
+      <img src="IMG_6309.jpg" alt="Mr. Blessed shop">
+      <div class="ab-acc"></div>
+    </div>
+  </div>
+
+  <div class="av-wrap">
+    <div class="av-inner">
+      <p class="stag">Why Choose Us</p>
+      <h2 class="sec-title" style="font-size:clamp(2rem,4vw,3.5rem)">The Mr. <span>Blessed</span> Difference</h2>
+      <div class="vgrid">
+        <div><div class="vi-line"></div><div class="vi-name">Premium Materials</div><div class="vi-desc">High-grade window film and vinyl trusted for performance, longevity, and optical clarity.</div></div>
+        <div><div class="vi-line"></div><div class="vi-name">Precision Installs</div><div class="vi-desc">Every edge trimmed clean. Every window fitted perfectly. We do not rush — we do it right.</div></div>
+        <div><div class="vi-line"></div><div class="vi-name">Open 24 Hours</div><div class="vi-desc">Located at 4900 W Princeton Dr, Princeton TX. We work around your schedule, any time of day.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ig-sec">
+    <p class="stag center">Follow Our Work</p>
+    <h2 class="sec-title" style="font-size:clamp(2rem,4vw,3.5rem)">See Us on <span>Instagram</span></h2>
+    <p style="color:var(--gray);font-size:0.93rem;max-width:460px;margin:1rem auto 0;line-height:1.82">Check out our latest installs, transformations, and behind-the-scenes work. Updated regularly.</p>
+    <a href="https://www.instagram.com/mr.blessed_tint_wrap/" target="_blank" rel="noopener" class="ig-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      View on Instagram
+    </a>
+    <p class="ig-note">@mr.blessed_tint_wrap</p>
+  </div>
+
+  <footer>
+    <a class="f-logo" data-page="home">Mr.<span>Blessed</span> Tint &amp; Wrap</a>
+    <p class="f-copy">4900 W Princeton Dr, Princeton TX 75407 &mdash; Open 24 Hours &mdash; &copy; 2026</p>
+    <div class="f-soc"><a href="https://www.instagram.com/mr.blessed_tint_wrap/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="#c9a84c" stroke="none"/></svg></a></div>
+  </footer>
+</div>
+
+<!-- SERVICES -->
+<div class="page" id="page-services">
+  <section class="ph">
+    <div class="srv-bg"></div>
+    <div class="ph-ov"></div>
+    <div class="ph-con"><p class="p-eye">What We Offer</p><h1 class="p-title">Services</h1></div>
+  </section>
+
+  <div class="srv-full">
+    <div class="sfi">
+      <div class="sfi-img"><img src="pexels-tejas-jr-528833302-36021355.jpg" alt="Automotive tint"></div>
+      <div class="sfi-info">
+        <div class="sfi-num">01</div>
+        <div class="sfi-name">Automotive Window Tint</div>
+        <div class="sfi-desc">Professional film installation for cars, trucks, SUVs, and vans. Blocks UV rays, reduces interior heat, and adds a clean look. We cut every window by hand for a perfect fit.</div>
+        <div class="stags"><span class="stg">UV Protection</span><span class="stg">Heat Rejection</span><span class="stg">All Vehicles</span><span class="stg">Precision Cut</span></div>
+      </div>
+    </div>
+    <div class="sfi">
+      <div class="sfi-img"><img src="pexels-svjae-27985078.jpg" alt="Vehicle wrap"></div>
+      <div class="sfi-info">
+        <div class="sfi-num">02</div>
+        <div class="sfi-name">Vehicle Wraps</div>
+        <div class="sfi-desc">Transform your vehicle with a full or partial vinyl wrap. Color changes, matte and satin finishes, custom graphics — and your factory paint stays protected underneath.</div>
+        <div class="stags"><span class="stg">Full Wraps</span><span class="stg">Partial Wraps</span><span class="stg">Color Change</span><span class="stg">Paint Protection</span></div>
+      </div>
+    </div>
+    <div class="sfi">
+      <div class="sfi-img"><img src="pexels-bulat843-1243575272-29185579.jpg" alt="Residential tint"></div>
+      <div class="sfi-info">
+        <div class="sfi-num">03</div>
+        <div class="sfi-name">Residential Tinting</div>
+        <div class="sfi-desc">Keep your home cooler, reduce glare, and add privacy with professional residential window film. Safe for all glass types and crystal clear from the inside.</div>
+        <div class="stags"><span class="stg">Heat Reduction</span><span class="stg">Privacy Film</span><span class="stg">UV Block</span><span class="stg">All Glass Types</span></div>
+      </div>
+    </div>
+    <div class="sfi">
+      <div class="sfi-img"><img src="pexels-bulat843-1243575272-29809127.jpg" alt="Commercial tint"></div>
+      <div class="sfi-info">
+        <div class="sfi-num">04</div>
+        <div class="sfi-name">Commercial Tinting</div>
+        <div class="sfi-desc">Lower energy costs and improve comfort in your office or storefront. Commercial film cuts solar heat, reduces screen glare, and improves the look of your building.</div>
+        <div class="stags"><span class="stg">Energy Savings</span><span class="stg">Glare Control</span><span class="stg">Storefronts</span><span class="stg">Office Buildings</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-ban">
+    <div class="cta-bg"></div>
+    <div class="cta-ov"></div>
+    <div class="cta-con">
+      <h2 class="cta-h">Not Sure What You Need?</h2>
+      <p class="cta-s">Give us a call — we will walk you through the best option.</p>
+      <div class="cta-acts">
+        <a href="tel:4694523873" class="btn-gold">(469) 452-3873</a>
+        <a class="btn-outline" data-page="contact">Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a class="f-logo" data-page="home">Mr.<span>Blessed</span> Tint &amp; Wrap</a>
+    <p class="f-copy">4900 W Princeton Dr, Princeton TX 75407 &mdash; Open 24 Hours &mdash; &copy; 2026</p>
+    <div class="f-soc"><a href="https://www.instagram.com/mr.blessed_tint_wrap/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="#c9a84c" stroke="none"/></svg></a></div>
+  </footer>
+</div>
+
+<!-- GALLERY -->
+<div class="page" id="page-gallery">
+  <section class="ph">
+    <div class="gal-bg"></div>
+    <div class="ph-ov"></div>
+    <div class="ph-con"><p class="p-eye">Our Work</p><h1 class="p-title">Gallery</h1></div>
+  </section>
+
+  <div class="gal-grid">
+    <div class="gal-item" onclick="openLB('pexels-svjae-27985078.jpg')"><img src="pexels-svjae-27985078.jpg" alt="Tint work"><div class="gal-ov"></div></div>
+    <div class="gal-item" onclick="openLB('pexels-tejas-jr-528833302-36021355.jpg')"><img src="pexels-tejas-jr-528833302-36021355.jpg" alt="Tint install"><div class="gal-ov"></div></div>
+    <div class="gal-item" onclick="openLB('IMG_6307.jpg')"><img src="IMG_6307.jpg" alt="Shop"><div class="gal-ov"></div></div>
+    <div class="gal-item" onclick="openLB('pexels-bulat843-1243575272-29185579.jpg')"><img src="pexels-bulat843-1243575272-29185579.jpg" alt="Detail"><div class="gal-ov"></div></div>
+    <div class="gal-item" onclick="openLB('IMG_6308.jpg')"><img src="IMG_6308.jpg" alt="Shop front"><div class="gal-ov"></div></div>
+    <div class="gal-item" onclick="openLB('pexels-introspectivedsgn-27258912.jpg')"><img src="pexels-introspectivedsgn-27258912.jpg" alt="Vehicle"><div class="gal-ov"></div></div>
+    <div class="gal-item" onclick="openLB('IMG_6310.jpg')"><img src="IMG_6310.jpg" alt="Completed tint"><div class="gal-ov"></div></div>
+    <div class="gal-item" onclick="openLB('pexels-dawid-kochman-129685123-28192209.jpg')"><img src="pexels-dawid-kochman-129685123-28192209.jpg" alt="Car tint"><div class="gal-ov"></div></div>
+    <div class="gal-item" onclick="openLB('IMG_6311.jpg')"><img src="IMG_6311.jpg" alt="Shop work"><div class="gal-ov"></div></div>
+    <div class="gal-item" onclick="openLB('pexels-bulat843-1243575272-29809127.jpg')"><img src="pexels-bulat843-1243575272-29809127.jpg" alt="Exterior"><div class="gal-ov"></div></div>
+    <div class="gal-item" onclick="openLB('IMG_6309.jpg')"><img src="IMG_6309.jpg" alt="Shop interior"><div class="gal-ov"></div></div>
+  </div>
+
+  <div style="text-align:center;padding:2rem 4rem 5rem">
+    <p style="color:var(--gray);font-family:var(--ff-cond);letter-spacing:0.12em;font-size:0.82rem;margin-bottom:1.4rem;text-transform:uppercase">See More Work on Instagram</p>
+    <a href="https://www.instagram.com/mr.blessed_tint_wrap/" target="_blank" rel="noopener" class="ig-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      Follow on Instagram
+    </a>
+  </div>
+
+  <footer>
+    <a class="f-logo" data-page="home">Mr.<span>Blessed</span> Tint &amp; Wrap</a>
+    <p class="f-copy">4900 W Princeton Dr, Princeton TX 75407 &mdash; Open 24 Hours &mdash; &copy; 2026</p>
+    <div class="f-soc"><a href="https://www.instagram.com/mr.blessed_tint_wrap/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="#c9a84c" stroke="none"/></svg></a></div>
+  </footer>
+</div>
+
+<div class="lightbox" id="lb" onclick="closeLB()">
+  <button class="lb-close" onclick="closeLB()">X</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="page-contact">
+  <section class="ph">
+    <div class="con-bg"></div>
+    <div class="ph-ov"></div>
+    <div class="ph-con"><p class="p-eye">Reach Out</p><h1 class="p-title">Contact</h1></div>
+  </section>
+
+  <div class="con-body">
+    <div>
+      <h2 class="ci-h">Come See Us</h2>
+      <div class="cd">
+        <div class="cd-ico"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <div><div class="cd-lbl">Address</div><div class="cd-val">4900 W Princeton Dr<br>Princeton, TX 75407</div></div>
+      </div>
+      <div class="cd">
+        <div class="cd-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></div>
+        <div><div class="cd-lbl">Phone</div><div class="cd-val"><a href="tel:4694523873">(469) 452-3873</a></div></div>
+      </div>
+      <div class="cd">
+        <div class="cd-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div><div class="cd-lbl">Hours</div><div class="cd-val">Open 24 Hours — Every Day</div></div>
+      </div>
+      <div class="cd">
+        <div class="cd-ico"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="#c9a84c" stroke="none"/></svg></div>
+        <div><div class="cd-lbl">Instagram</div><div class="cd-val"><a href="https://www.instagram.com/mr.blessed_tint_wrap/" target="_blank" rel="noopener">@mr.blessed_tint_wrap</a></div></div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3338!2d-96.497!3d33.184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c1d85f9fc671b%3A0x1!2s4900+W+Princeton+Dr%2C+Princeton%2C+TX+75407!5e0!3m2!1sen!2sus!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mr. Blessed Tint & Wrap"></iframe>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="cf-h">Send a Message</h2>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="cform">
+        <div class="frow">
+          <div class="fg"><label for="fn">First Name</label><input type="text" id="fn" name="first_name" placeholder="John" required></div>
+          <div class="fg"><label for="ln">Last Name</label><input type="text" id="ln" name="last_name" placeholder="Smith"></div>
+        </div>
+        <div class="fg"><label for="ph">Phone</label><input type="tel" id="ph" name="phone" placeholder="(469) 000-0000"></div>
+        <div class="fg"><label for="em">Email</label><input type="email" id="em" name="email" placeholder="john@email.com" required></div>
+        <div class="fg">
+          <label for="sv">Service Needed</label>
+          <select id="sv" name="service">
+            <option value="">Select a service</option>
+            <option>Automotive Window Tint</option>
+            <option>Vehicle Wrap</option>
+            <option>Residential Tinting</option>
+            <option>Commercial Tinting</option>
+            <option>Not sure — need advice</option>
+          </select>
+        </div>
+        <div class="fg"><label for="vh">Vehicle / Property</label><input type="text" id="vh" name="vehicle" placeholder="2022 Dodge Charger / 3-bedroom home..."></div>
+        <div class="fg"><label for="msg">Message</label><textarea id="msg" name="message" placeholder="Any details, questions, or preferred appointment times..."></textarea></div>
+        <button type="submit" class="fsub">Send Message</button>
+        <div class="f-ok" id="f-ok">Message sent. We will be in touch shortly.</div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <a class="f-logo" data-page="home">Mr.<span>Blessed</span> Tint &amp; Wrap</a>
+    <p class="f-copy">4900 W Princeton Dr, Princeton TX 75407 &mdash; Open 24 Hours &mdash; &copy; 2026</p>
+    <div class="f-soc"><a href="https://www.instagram.com/mr.blessed_tint_wrap/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="#c9a84c" stroke="none"/></svg></a></div>
+  </footer>
+</div>
+
+<script>
+var cur='home';
+function showPage(n){
+  var c=document.getElementById('page-'+cur);
+  var nx=document.getElementById('page-'+n);
+  if(!nx||n===cur)return;
+  if(c)c.classList.remove('active');
+  nx.classList.add('active');
+  cur=n;
+  window.scrollTo(0,0);
+  document.querySelectorAll('.nav-links a[data-page]').forEach(function(el){
+    el.classList.toggle('active',el.dataset.page===n);
+  });
+  var mn=document.getElementById('mob-nav');
+  if(mn)mn.classList.remove('open');
+}
+document.addEventListener('click',function(e){
+  var el=e.target.closest('[data-page]');
+  if(el&&el.dataset.page){e.preventDefault();showPage(el.dataset.page);}
+  if(e.target.closest('.mob-btn')){
+    var mn=document.getElementById('mob-nav');
+    if(mn)mn.classList.toggle('open');
+  }
+});
+function openLB(src){
+  document.getElementById('lb-img').src=src;
+  document.getElementById('lb').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLB(){
+  document.getElementById('lb').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLB();});
+var cf=document.getElementById('cform');
+if(cf){
+  cf.addEventListener('submit',function(e){
+    e.preventDefault();
+    fetch(cf.action,{method:'POST',body:new FormData(cf),headers:{'Accept':'application/json'}})
+    .then(function(r){
+      cf.reset();
+      document.getElementById('f-ok').style.display='block';
+    }).catch(function(){
+      document.getElementById('f-ok').style.display='block';
+    });
+  });
+}
+</script>
+</body>
+</html>
